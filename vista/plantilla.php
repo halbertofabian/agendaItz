@@ -66,7 +66,7 @@
 
                     include_once 'vista/paginas/'.$_GET["ruta"].'.php'; 
                 }else{
-                    echo "Error 404 nuevo";
+                    echo "Error 404";
                 }
             }else{
                 include_once 'vista/paginas/inicio.php'; 
