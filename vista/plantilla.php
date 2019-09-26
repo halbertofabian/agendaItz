@@ -62,7 +62,9 @@
 
 					$_GET["ruta"]=="eventos"  ||
 
-					$_GET["ruta"]=="invitados" 
+					$_GET["ruta"]=="invitados" ||
+
+					$_GET["ruta"]=="lugares"  
 					
 
                     
