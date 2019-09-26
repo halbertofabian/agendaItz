@@ -58,7 +58,11 @@
                 if(
                     $_GET["ruta"]=="usuarios"  ||
 
-					$_GET["ruta"]=="organizadores" 
+					$_GET["ruta"]=="organizadores" ||
+
+					$_GET["ruta"]=="eventos"  ||
+
+					$_GET["ruta"]=="invitados" 
 					
 
                     
