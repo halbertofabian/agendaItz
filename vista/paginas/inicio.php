@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb mt-4">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">Home</li>
+    <li class="breadcrumb-item active" aria-current="page"></li>
 
   </ol>
 </nav>
