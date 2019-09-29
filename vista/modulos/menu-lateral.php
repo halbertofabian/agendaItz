@@ -58,6 +58,13 @@
 								
 							</a>
 						</li>	
+						<li class="nav-item">
+							<a  href="invitados">
+							<i class="fas fa-user-check"></i>
+								<p>Invitados</p>
+								
+							</a>
+						</li>
 						
 					</ul>
 				</div>
