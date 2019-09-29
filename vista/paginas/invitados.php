@@ -35,7 +35,7 @@
 
           <div class="form-group">
             <label for="fechaNas">Fecha de nacimiento</label>
-            <input type="text" class="form-control" id="fechaNas" placeholder="Fecha de nacimiento" name="fechaNas">
+            <input type="date" class="form-control" id="fechaNas" placeholder="Fecha de nacimiento" name="fechaNas">
           </div>
           <div class="form-group col-md-4">
             <label for="genero">Genero</label>
@@ -107,11 +107,11 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-primary" name="btnGuardarLugar">Guardar</button>
+          <button type="submit" class="btn btn-primary" name="btnGuardarInivitado">Guardar</button>
         </div>
         <?php
-        $enviarData = new LugarControlador();
-        $enviarData->ctrAgregarLugar();
+        $enviarData = new InvitadoControlador();
+        $enviarData->ctrAgregarInivitado();
         ?>
       </form>
     </div>
