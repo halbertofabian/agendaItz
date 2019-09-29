@@ -1,12 +1,12 @@
 <nav aria-label="breadcrumb mt-4">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">Invitados</li>
+    <li class="breadcrumb-item active" aria-current="page">Persona</li>
 
   </ol>
 </nav>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Agregar Invitado
+  Agregar Persona
 </button>
 
 <!-- Modal -->
@@ -14,7 +14,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Agregar Invitado</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Persona</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -25,11 +25,11 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                
-                <input type="hidden" class="form-control" id="idinvitado" placeholder="id_invitado" name="idinvitado">
+                <input type="hidden" class="form-control" id="idpersona" placeholder="id persona" name="idpersona">
               </div>
               <div class="form-group col-md-12">
-                <label for="nombre">Nombre del invitado</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Nombre del invitado" name="nombre">
+                <label for="nombrelugar">Nombre del lugar</label>
+                <input type="text" class="form-control" id="nombrelugar" placeholder="Nombre del lugar" name="nombrelugar">
               </div>
             </div>
             
@@ -39,7 +39,7 @@
             </div>
             <div class="form-group col-md-4">
               <label for="genero">Genero</label>
-              <input type="text" class="form-control" id="genero" placeholder="Genero" name="genero">
+              <input type="text" class="form-control" id="genero" name="genero">
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -52,21 +52,23 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="email">E-mail</label>
-                <input type="text" class="form-control" id="email" name="email">
+                <input type="email" class="form-control" id="email" name="email">
               </div>
               <div class="form-group col-md-6">
-                <label for="idpersona">Codigo de identificacion</label>
-                <input type="text" class="form-control" id="idpersona" name="idpersona">
+                <label for="rol">Rol</label>
+                <input type="text" class="form-control" id="rol" name="rol">
               </div>
-
               <div class="form-group col-md-6">
-                <label for="parentesco">Parentesco</label>
-                <input type="text" class="form-control" id="parentesco" name="parentesco">
-              </div>
-
-              <div class="form-group col-md-6">
-                <label for="idlugar">Id del lugar</label>
+                <label for="idlugar">Id del Lugar</label>
                 <input type="text" class="form-control" id="idlugar" name="idlugar">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="idevento">Id del evento</label>
+                <input type="text" class="form-control" id="idevento" name="idevento">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="clave">Clave</label>
+                <input type="text" class="form-control" id="clave" name="clave">
               </div>
 
 
@@ -77,11 +79,11 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-primary" name="btnGuardarInvitado">Guardar</button>
+          <button type="submit" class="btn btn-primary" name="btnGuardarPersona">Guardar</button>
         </div>
         <?php 
-            $enviarData = new InvitadoControlador();
-            $enviarData -> ctrAgregarInvitado();
+            $enviarData = new PersonaControlador();
+            $enviarData -> ctrAgregarPersona();
          ?>
       </form>
     </div>

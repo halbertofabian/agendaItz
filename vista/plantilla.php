@@ -75,7 +75,11 @@
 
 							$_GET["ruta"] == "invitados" ||
 
-							$_GET["ruta"] == "lugares"
+							$_GET["ruta"] == "lugares" || 
+
+							$_GET["ruta"] == "persona" ||
+
+							$_GET["ruta"] == "tematica"
 
 
 
