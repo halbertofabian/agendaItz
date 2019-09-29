@@ -1,6 +1,7 @@
 <?php 
     //Importación de todos los controladores
     require_once 'controlador/plantilla.controlador.php';
+    require_once 'controlador/lugar.controlador.php';
 
     
 
@@ -11,5 +12,8 @@
 
     $mostrarPlantilla = new PlantillaControlador();
     $mostrarPlantilla -> ctrMostrarPlantilla();
+
+
+    
 
 ?>
