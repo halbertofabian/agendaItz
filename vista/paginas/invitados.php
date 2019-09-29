@@ -39,7 +39,8 @@
             </div>
             <div class="form-group col-md-4">
               <label for="genero">Genero</label>
-              <input type="text" class="form-control" id="genero" placeholder="Genero" name="genero">
+              <input type="radio" class="form-control" id="genero_hombre" name="genero" value="1">Hombre <br>
+              <input type="radio" class="form-control" id="genero_mujer" name="genero" value="0">Mujer
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -52,7 +53,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="email">E-mail</label>
-                <input type="text" class="form-control" id="email" name="email">
+                <input type="email" class="form-control" id="email" name="email">
               </div>
               <div class="form-group col-md-6">
                 <label for="idpersona">Codigo de identificacion</label>
