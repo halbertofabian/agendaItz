@@ -52,7 +52,7 @@
 		<div class="main-panel">
 			<div class="content">
 
-            <div class="container"><br>  
+            <div class="container"><br>
 
             <?php if(isset($_GET["ruta"])){
                 if(
