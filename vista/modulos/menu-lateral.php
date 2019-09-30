@@ -52,21 +52,21 @@
 							<h4 class="text-section">Páginas</h4>
 						</li>
 						<li class="nav-item">
-							<a  href="lugares">
+							<a  href="lugar">
 							<i class="fas fa-location-arrow"></i>
 								<p>Lugares</p>
 								
 							</a>
 						</li>	
 						<li class="nav-item">
-							<a  href="invitados">
+							<a  href="invitado">
 							<i class="fas fa-user-check"></i>
 								<p>Invitados</p>
 								
 							</a>
 						</li>
 						<li class="nav-item">
-							<a  href="eventos">
+							<a  href="evento">
 							<i class="fas fa-handshake"></i>
 								<p>Enventos</p>
 								
@@ -86,13 +86,7 @@
 								
 							</a>
 						</li>
-						<li class="nav-item">
-							<a  href="usuarios">
-							<i class="far fa-id-card"></i>
-								<p>Usuarios</p>
-								
-							</a>
-						</li>
+						
 						
 					</ul>
 				</div>

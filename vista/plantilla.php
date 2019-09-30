@@ -67,19 +67,21 @@
 
 					<?php if (isset($_GET["ruta"])) {
 						if (
-							$_GET["ruta"] == "usuarios"  ||
+							
 
-							$_GET["ruta"] == "organizadores" ||
+							
 
-							$_GET["ruta"] == "eventos"  ||
+							$_GET["ruta"] == "evento"  ||
 
-							$_GET["ruta"] == "invitados" ||
+							$_GET["ruta"] == "invitado" ||
 
-							$_GET["ruta"] == "lugares" || 
+							$_GET["ruta"] == "lugar" || 
 
 							$_GET["ruta"] == "persona" ||
 
-							$_GET["ruta"] == "tematica"
+							$_GET["ruta"] == "tematica" ||
+
+							$_GET["ruta"] == "actividad" 
 
 
 

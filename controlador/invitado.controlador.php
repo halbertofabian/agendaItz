@@ -1,7 +1,7 @@
 <?php
 class InvitadoControlador
 {
-    public static function ctrAgregarInivitado()
+    public static function ctrAgregarInvitado()
     {
 
         if (isset($_POST['btnGuardarInivitado'])) {

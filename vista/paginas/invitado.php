@@ -107,21 +107,12 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-<<<<<<< HEAD
           <button type="submit" class="btn btn-primary" name="btnGuardarInvitado">Guardar</button>
         </div>
         <?php 
             $enviarData = new InvitadoControlador();
             $enviarData -> ctrAgregarInvitado();
          ?>
-=======
-          <button type="submit" class="btn btn-primary" name="btnGuardarInivitado">Guardar</button>
-        </div>
-        <?php
-        $enviarData = new InvitadoControlador();
-        $enviarData->ctrAgregarInivitado();
-        ?>
->>>>>>> 7b8f4933d2fb63a513ef7f4ac10ba5f84742339e
       </form>
     </div>
   </div>
