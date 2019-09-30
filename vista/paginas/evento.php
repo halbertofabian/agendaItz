@@ -12,6 +12,55 @@
   Agregar Evento
 </button>
 
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre de evento</th>
+        <th scope="col">Fecha evento</th>
+        <th scope="col">Costo total evento</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <?php  
+        
+        // Mandar a traer la api para consumir su data
+        $api = file_get_contents("http://itzagenda.softmormx.com/api/api.php/eventos");
+        // convertir la data que viene en json a arrglo
+        $api = json_decode($api,true);
+        
+        /**
+         * Mostrar que es lo que contine
+        *echo "<pre>";
+        *print_r($api);
+        *echo "</pre>";*/
+        foreach ($api as $key => $value):
+      ?>
+
+      <tr>
+        <th>
+          <?php echo $value['idevento']; ?>
+        </th>
+        <th>
+          <?php echo $value['nombrevento']; ?>
+        </th>
+        <th>
+          <?php echo $value['fechaevent']; ?>
+        </th>
+        <th>
+          <?php echo $value['costototal']; ?>
+        </th>
+      </tr>
+
+        <?php endforeach; ?>
+
+
+    </tbody>
+  </table>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

@@ -9,6 +9,75 @@
   Agregar Invitado
 </button>
 
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha nacimiento</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Lugar de procedencia</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Email</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Parentesco</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <?php  
+        
+        // Mandar a traer la api para consumir su data
+        $api = file_get_contents("http://itzagenda.softmormx.com/api/api.php/invitados");
+        // convertir la data que viene en json a arrglo
+        $api = json_decode($api,true);
+        
+        /**
+         * Mostrar que es lo que contine
+        *echo "<pre>";
+        *print_r($api);
+        *echo "</pre>";*/
+        foreach ($api as $key => $value):
+      ?>
+
+      <tr>
+        <th>
+          <?php echo $value['idinvitado']; ?>
+        </th>
+        <th>
+          <?php echo $value['nombre']; ?>
+        </th>
+        <th>
+          <?php echo $value['fechaNas']; ?>
+        </th>
+        <th>
+          <?php echo $value['genero']; ?>
+        </th>
+        <th>
+          <?php echo $value['lugar_procedencia']; ?>
+        </th>
+        <th>
+          <?php echo $value['telefono']; ?>
+        </th>
+        <th>
+          <?php echo $value['email']; ?>
+        </th>
+        <th>
+          <?php echo $value['idpersona']; ?>
+        </th>
+        <th>
+          <?php echo $value['parentesco']; ?>
+        </th>
+      </tr>
+
+        <?php endforeach; ?>
+
+
+    </tbody>
+  </table>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

@@ -9,6 +9,59 @@
   Agregar Tematica
 </button>
 
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tematica</th>
+        <th scope="col">Color</th>
+        <th scope="col">Vestimenta</th>
+        <th scope="col">Decoracion</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <?php  
+        
+        // Mandar a traer la api para consumir su data
+        $api = file_get_contents("http://itzagenda.softmormx.com/api/api.php/tematicas");
+        // convertir la data que viene en json a arrglo
+        $api = json_decode($api,true);
+        
+        /**
+         * Mostrar que es lo que contine
+        *echo "<pre>";
+        *print_r($api);
+        *echo "</pre>";*/
+        foreach ($api as $key => $value):
+      ?>
+
+      <tr>
+        <th>
+          <?php echo $value['idtipotematica']; ?>
+        </th>
+        <th>
+          <?php echo $value['tematica']; ?>
+        </th>
+        <th>
+          <?php echo $value['color']; ?>
+        </th>
+        <th>
+          <?php echo $value['vestimenta']; ?>
+        </th>
+        <th>
+          <?php echo $value['decoracion']; ?>
+        </th>
+      </tr>
+
+        <?php endforeach; ?>
+
+
+    </tbody>
+  </table>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
