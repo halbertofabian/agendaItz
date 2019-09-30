@@ -3,6 +3,9 @@
     require_once 'controlador/plantilla.controlador.php';
     require_once 'controlador/lugar.controlador.php';
     require_once 'controlador/invitado.controlador.php';
+    require_once 'controlador/persona.controlador.php';
+    require_once 'controlador/tematica.controlador.php';
+    require_once 'controlador/evento.controlador.php';
 
     
 

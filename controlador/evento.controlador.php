@@ -1,12 +1,12 @@
 <?php
-class InvitadoControlador
+class EventoControlador
 {
-    public static function ctrAgregarInivitado()
+    public static function ctrAgregarEvento()
     {
 
-        if (isset($_POST['btnGuardarInivitado'])) {
+        if (isset($_POST['btnGuardarEvento'])) {
             //Lo primerito, creamos una variable iniciando curl, pasándole la url
-            $ch = curl_init('http://itzagenda.softmormx.com/api/api.php/insertar/invitado');
+            $ch = curl_init('http://itzagenda.softmormx.com/api/api.php/insertar/evento');
 
             //especificamos el POST (tambien podemos hacer peticiones enviando datos por GET
             curl_setopt($ch, CURLOPT_POST, 1);
@@ -44,7 +44,7 @@ class InvitadoControlador
               })
               .then((willDelete) => {
                 if (willDelete) {
-                    location.href = "invitados"
+                    location.href = "eventos"
                 }
               });
               

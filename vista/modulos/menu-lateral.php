@@ -65,6 +65,34 @@
 								
 							</a>
 						</li>
+						<li class="nav-item">
+							<a  href="eventos">
+							<i class="fas fa-handshake"></i>
+								<p>Enventos</p>
+								
+							</a>
+						</li>
+						<li class="nav-item">
+							<a  href="persona">
+							<i class="fas fa-users"></i>
+								<p>Personas</p>
+								
+							</a>
+						</li>
+						<li class="nav-item">
+							<a  href="tematica">
+							<i class="fab fa-accusoft"></i>
+								<p>Tematicas</p>
+								
+							</a>
+						</li>
+						<li class="nav-item">
+							<a  href="usuarios">
+							<i class="far fa-id-card"></i>
+								<p>Usuarios</p>
+								
+							</a>
+						</li>
 						
 					</ul>
 				</div>

@@ -24,22 +24,28 @@
          
             <div class="form-row">
               <div class="form-group col-md-6">
-               
-                <input type="hidden" class="form-control" id="idpersona" placeholder="id persona" name="idpersona">
+              <label for="idpersona">Identificación de la persona</label>
+                <input type="text" class="form-control" id="idpersona" placeholder="id persona" name="idpersona">
               </div>
               <div class="form-group col-md-12">
-                <label for="nombrelugar">Nombre del lugar</label>
-                <input type="text" class="form-control" id="nombrelugar" placeholder="Nombre del lugar" name="nombrelugar">
+                <label for="nombrelugar">Nombre de la persona</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre de la persona" name="nombre">
               </div>
             </div>
+
+
+
+            
             
             <div class="form-group">
               <label for="fechaNas">Fecha de nacimiento</label>
-              <input type="text" class="form-control" id="fechaNas" placeholder="Fecha de nacimiento" name="fechaNas">
+              <input type="date" class="form-control" id="fechaNas" placeholder="Fecha de nacimiento" name="fechaNas">
             </div>
             <div class="form-group col-md-4">
+             
               <label for="genero">Genero</label>
-              <input type="text" class="form-control" id="genero" name="genero">
+            <input type="radio" class="form-control" id="genero_hombre" name="genero" value="1">Hombre <br>
+            <input type="radio" class="form-control" id="genero_mujer" name="genero" value="0">Mujer
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -59,16 +65,42 @@
                 <input type="text" class="form-control" id="rol" name="rol">
               </div>
               <div class="form-group col-md-6">
-                <label for="idlugar">Id del Lugar</label>
-                <input type="text" class="form-control" id="idlugar" name="idlugar">
+                <label for="idlugar">Lugar</label>
+                <select name="idlugar" id="idlugar" class="form-control form-control-lg" required>
+                <option value="">Selecione un lugar</option>
+                <?php
+                $personas = file_get_contents("http://itzagenda.softmormx.com/api/api.php/lugares");
+                $personas = json_decode($personas, true);
+
+                foreach ($personas as $key => $value) :
+
+
+                  ?>
+                  <option value="<?php echo $value['idlugar'] ?>"><?php echo $value['idlugar'].' '. $value['nombrelugar'] ?></option>
+
+                <?php endforeach; ?>
+              </select>
               </div>
               <div class="form-group col-md-6">
-                <label for="idevento">Id del evento</label>
-                <input type="text" class="form-control" id="idevento" name="idevento">
+                <label for="idevento">Evento</label>
+                <select name="idevento" id="idevento" class="form-control form-control-lg" required>
+                <option value="">Selecione un evento</option>
+                <?php
+                $personas = file_get_contents("http://itzagenda.softmormx.com/api/api.php/eventos");
+                $personas = json_decode($personas, true);
+
+                foreach ($personas as $key => $value) :
+
+
+                  ?>
+                  <option value="<?php echo $value['idevento'] ?>"><?php echo$value['idevento'] .' '. $value['nombrevento'] ?></option>
+
+                <?php endforeach; ?>
+              </select>
               </div>
               <div class="form-group col-md-6">
                 <label for="clave">Clave</label>
-                <input type="text" class="form-control" id="clave" name="clave">
+                <input type="password" class="form-control" id="clave" name="clave">
               </div>
 
 

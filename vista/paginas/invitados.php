@@ -5,12 +5,12 @@
   </ol>
 </nav>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalInvitado">
   Agregar Invitado
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModalInvitado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -107,21 +107,15 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-<<<<<<< HEAD
           <button type="submit" class="btn btn-primary" name="btnGuardarInvitado">Guardar</button>
         </div>
         <?php 
+            /*$enviarData = new InvitadoControlador();
+            $enviarData -> ctrAgregarInvitado();*/
+
             $enviarData = new InvitadoControlador();
-            $enviarData -> ctrAgregarInvitado();
+            $enviarData -> ctrAgregarInivitado();
          ?>
-=======
-          <button type="submit" class="btn btn-primary" name="btnGuardarInivitado">Guardar</button>
-        </div>
-        <?php
-        $enviarData = new InvitadoControlador();
-        $enviarData->ctrAgregarInivitado();
-        ?>
->>>>>>> 7b8f4933d2fb63a513ef7f4ac10ba5f84742339e
       </form>
     </div>
   </div>

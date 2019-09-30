@@ -21,34 +21,34 @@
       </div>
       <form action="#" method="post">
         <div class="modal-body">
-         
-            <div class="form-row">
-              <div class="form-group col-md-6">
-               
-                <input type="hidden" class="form-control" id="idtematica" placeholder="id tematica" name="id_tematica">
-              </div>
-              <div class="form-group col-md-12">
-                <label for="tematica">Tematica</label>
-                <input type="text" class="form-control" id="tematica" placeholder="Tematica" name="tematica">
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="color">Color</label>
-              <input type="text" class="form-control" id="color" placeholder="45 -98" name="color">
-            </div>
-            <div class="form-group col-md-4">
-              <label for="vestimenta">vestimenta</label>
-              <input type="number" class="form-control" id="vestimenta" name="vestimenta">
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="decoracion">Decoracion</label>
-                <input type="text" class="form-control" id="decoracion" name="decoracion">
-              </div>
-              
 
-          
+          <div class="form-row">
+            <div class="form-group col-md-6">
+
+              <input type="hidden" class="form-control" id="idtematica" placeholder="id tematica" name="idtematica">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="tematica">Tematica</label>
+              <input type="text" class="form-control" id="tematica" placeholder="Tematica" name="tematica">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="color">Color</label>
+            <input type="text" class="form-control" id="color" placeholder="Rojo, amarillo, azul, etc..." name="color">
+          </div>
+          <div class="form-group col-md-12">
+            <label for="vestimenta">vestimenta</label>
+            <input type="text" class="form-control" id="vestimenta" name="vestimenta">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="decoracion">Decoracion</label>
+              <input type="text" class="form-control" id="decoracion" name="decoracion">
+            </div>
+
+          </div>
+
 
 
 
@@ -57,10 +57,10 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
           <button type="submit" class="btn btn-primary" name="btnGuardarTematica">Guardar</button>
         </div>
-        <?php 
-            $enviarData = new TematicaControlador();
-            $enviarData -> ctrAgregarTematica();
-         ?>
+        <?php
+      $enviarData = new TematicaControlador();
+        $enviarData->ctrAgregarTematica();
+        ?>
       </form>
     </div>
   </div>
