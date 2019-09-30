@@ -52,6 +52,13 @@
 							<h4 class="text-section">Páginas</h4>
 						</li>
 						<li class="nav-item">
+							<a  href="actividad">
+							<i class="fas fa-chart-line"></i>
+								<p>Actividades</p>
+								
+							</a>
+						</li>
+						<li class="nav-item">
 							<a  href="lugar">
 							<i class="fas fa-location-arrow"></i>
 								<p>Lugares</p>
