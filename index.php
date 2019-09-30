@@ -6,6 +6,7 @@
     require_once 'controlador/persona.controlador.php';
     require_once 'controlador/tematica.controlador.php';
     require_once 'controlador/evento.controlador.php';
+    require_once 'controlador/actividad.controlador.php';
 
     
 

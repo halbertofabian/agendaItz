@@ -1,12 +1,12 @@
 <?php
-class LugarControlador
+class ActividadControlador
 {
-    public static function ctrAgregarLugar()
+    public static function ctrAgregarActividad()
     {
 
-        if (isset($_POST['btnGuardarLugar'])) {
+        if (isset($_POST['btnGuardarActividad'])) {
             //Lo primerito, creamos una variable iniciando curl, pasándole la url
-            $ch = curl_init('http://itzagenda.softmormx.com/api/api.php/insertar/lugar');
+            $ch = curl_init('http://itzagenda.softmormx.com/api/api.php/insertar/actividad');
 
             //especificamos el POST (tambien podemos hacer peticiones enviando datos por GET
             curl_setopt($ch, CURLOPT_POST, 1);
@@ -44,7 +44,7 @@ class LugarControlador
               })
               .then((willDelete) => {
                 if (willDelete) {
-                    location.href = "lugar"
+                    location.href = "actividad"
                 }
               });
               

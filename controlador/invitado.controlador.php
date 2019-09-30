@@ -44,7 +44,7 @@ class InvitadoControlador
               })
               .then((willDelete) => {
                 if (willDelete) {
-                    location.href = "invitados"
+                    location.href = "invitado"
                 }
               });
               

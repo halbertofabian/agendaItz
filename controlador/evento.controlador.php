@@ -44,7 +44,7 @@ class EventoControlador
               })
               .then((willDelete) => {
                 if (willDelete) {
-                    location.href = "eventos"
+                    location.href = "evento"
                 }
               });
               
