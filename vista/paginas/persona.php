@@ -9,6 +9,71 @@
   Agregar Persona
 </button>
 
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha nacimiento</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Lugar de procedencia</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Email</th>
+        <th scope="col">Rol</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php  
+        
+        // Mandar a traer la api para consumir su data
+        $api = file_get_contents("http://itzagenda.softmormx.com/api/api.php/personas");
+        // convertir la data que viene en json a arrglo
+        $api = json_decode($api,true);
+        
+        /**
+         * Mostrar que es lo que contine
+        *echo "<pre>";
+        *print_r($api);
+        *echo "</pre>";*/
+        foreach ($api as $key => $value):
+      ?>
+
+      <tr>
+        <th>
+          <?php echo $value['idpersona']; ?>
+        </th>
+        <th>
+          <?php echo $value['nombre']; ?>
+        </th>
+        <th>
+          <?php echo $value['fechaNas']; ?>
+        </th>
+        <th>
+          <?php echo $value['genero']; ?>
+        </th>
+        <th>
+          <?php echo $value['lugar_procedencia']; ?>
+        </th>
+        <th>
+          <?php echo $value['telefono']; ?>
+        </th>
+        <th>
+          <?php echo $value['email']; ?>
+        </th>
+        <th>
+          <?php echo $value['rol']; ?>
+        </th>
+      </tr>
+
+        <?php endforeach; ?>
+
+
+    </tbody>
+  </table>
+</div>
+
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -21,52 +86,52 @@
       </div>
       <form action="#" method="post">
         <div class="modal-body">
-         
-            <div class="form-row">
-              <div class="form-group col-md-6">
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
               <label for="idpersona">Identificación de la persona</label>
-                <input type="text" class="form-control" id="idpersona" placeholder="id persona" name="idpersona">
-              </div>
-              <div class="form-group col-md-12">
-                <label for="nombrelugar">Nombre de la persona</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Nombre de la persona" name="nombre">
-              </div>
+              <input type="text" class="form-control" id="idpersona" placeholder="id persona" name="idpersona">
             </div>
-
-
-
-            
-            
-            <div class="form-group">
-              <label for="fechaNas">Fecha de nacimiento</label>
-              <input type="date" class="form-control" id="fechaNas" placeholder="Fecha de nacimiento" name="fechaNas">
+            <div class="form-group col-md-12">
+              <label for="nombrelugar">Nombre de la persona</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre de la persona" name="nombre">
             </div>
-            <div class="form-group col-md-4">
-             
-              <label for="genero">Genero</label>
+          </div>
+
+
+
+
+
+          <div class="form-group">
+            <label for="fechaNas">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="fechaNas" placeholder="Fecha de nacimiento" name="fechaNas">
+          </div>
+          <div class="form-group col-md-4">
+
+            <label for="genero">Genero</label>
             <input type="radio" class="form-control" id="genero_hombre" name="genero" value="1">Hombre <br>
             <input type="radio" class="form-control" id="genero_mujer" name="genero" value="0">Mujer
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="lugar_procedencia">Lugar de procedencia</label>
+              <input type="text" class="form-control" id="lugar_procedencia" name="lugar_procedencia">
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="lugar_procedencia">Lugar de procedencia</label>
-                <input type="text" class="form-control" id="lugar_procedencia" name="lugar_procedencia">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="telefono">Teléfono</label>
-                <input type="number" class="form-control" id="telefono" name="telefono">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="email">E-mail</label>
-                <input type="email" class="form-control" id="email" name="email">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="rol">Rol</label>
-                <input type="text" class="form-control" id="rol" name="rol">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="idlugar">Lugar</label>
-                <select name="idlugar" id="idlugar" class="form-control form-control-lg" required>
+            <div class="form-group col-md-6">
+              <label for="telefono">Teléfono</label>
+              <input type="number" class="form-control" id="telefono" name="telefono">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="email">E-mail</label>
+              <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="rol">Rol</label>
+              <input type="text" class="form-control" id="rol" name="rol">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="idlugar">Lugar</label>
+              <select name="idlugar" id="idlugar" class="form-control form-control-lg" required>
                 <option value="">Selecione un lugar</option>
                 <?php
                 $personas = file_get_contents("http://itzagenda.softmormx.com/api/api.php/lugares");
@@ -76,14 +141,14 @@
 
 
                   ?>
-                  <option value="<?php echo $value['idlugar'] ?>"><?php echo $value['idlugar'].' '. $value['nombrelugar'] ?></option>
+                  <option value="<?php echo $value['idlugar'] ?>"><?php echo $value['idlugar'] . ' ' . $value['nombrelugar'] ?></option>
 
                 <?php endforeach; ?>
               </select>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="idevento">Evento</label>
-                <select name="idevento" id="idevento" class="form-control form-control-lg" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="idevento">Evento</label>
+              <select name="idevento" id="idevento" class="form-control form-control-lg" required>
                 <option value="">Selecione un evento</option>
                 <?php
                 $personas = file_get_contents("http://itzagenda.softmormx.com/api/api.php/eventos");
@@ -93,18 +158,18 @@
 
 
                   ?>
-                  <option value="<?php echo $value['idevento'] ?>"><?php echo$value['idevento'] .' '. $value['nombrevento'] ?></option>
+                  <option value="<?php echo $value['idevento'] ?>"><?php echo $value['idevento'] . ' ' . $value['nombrevento'] ?></option>
 
                 <?php endforeach; ?>
               </select>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="clave">Clave</label>
-                <input type="password" class="form-control" id="clave" name="clave">
-              </div>
-
-
             </div>
+            <div class="form-group col-md-6">
+              <label for="clave">Clave</label>
+              <input type="password" class="form-control" id="clave" name="clave">
+            </div>
+
+
+          </div>
 
 
 
@@ -113,10 +178,10 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
           <button type="submit" class="btn btn-primary" name="btnGuardarPersona">Guardar</button>
         </div>
-        <?php 
-            $enviarData = new PersonaControlador();
-            $enviarData -> ctrAgregarPersona();
-         ?>
+        <?php
+        $enviarData = new PersonaControlador();
+        $enviarData->ctrAgregarPersona();
+        ?>
       </form>
     </div>
   </div>

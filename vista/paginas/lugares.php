@@ -9,6 +9,52 @@
   Agregar Lugar
 </button>
 
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Direccion</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <?php  
+        
+        // Mandar a traer la api para consumir su data
+        $api = file_get_contents("http://itzagenda.softmormx.com/api/api.php/lugares");
+        // convertir la data que viene en json a arrglo
+        $api = json_decode($api,true);
+        
+        /**
+         * Mostrar que es lo que contine
+        *echo "<pre>";
+        *print_r($api);
+        *echo "</pre>";*/
+        foreach ($api as $key => $value):
+      ?>
+
+      <tr>
+        <th>
+          <?php echo $value['idlugar']; ?>
+        </th>
+        <th>
+          <?php echo $value['nombrelugar']; ?>
+        </th>
+        <th>
+          <?php echo $value['ST_AsText(direccion)']; ?>
+        </th>
+        
+      </tr>
+
+        <?php endforeach; ?>
+
+
+    </tbody>
+  </table>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
