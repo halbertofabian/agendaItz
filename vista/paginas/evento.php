@@ -87,7 +87,7 @@
             
             <div class="form-group">
               <label for="fechaevent">Fecha del evento</label>
-              <input type="text" class="form-control" id="fechaevent" placeholder="Fecha del evento" name="fechaevent">
+              <input type="date" class="form-control" id="fechaevent" placeholder="Fecha del evento" name="fechaevent">
             </div>
             <div class="form-group col-md-4">
               <label for="costototal">Código postal</label>
@@ -95,16 +95,42 @@
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="tpagado">Tarea pagada</label>
+                <label for="tpagado">Total pagado</label>
                 <input type="text" class="form-control" id="tpagado" name="tpagado">
               </div>
               <div class="form-group col-md-6">
                 <label for="tematica_idtipotematica">Tematica</label>
-                <input type="text" class="form-control" id="tematica_idtipotematica" name="tematica_idtipotematica">
+                <select name="tematica_idtipotematica" id="idlugar" class="form-control form-control-lg">
+                <option value="">Selecione un lugar</option>
+                <?php
+                $lugares = file_get_contents("http://itzagenda.softmormx.com/api/api.php/tematicas");
+                $lugares = json_decode($lugares, true);
+
+                foreach ($lugares as $key => $value) :
+
+
+                  ?>
+                  <option value="<?php echo $value['idtipotematica'] ?>"><?php echo $value['tematica'] ?></option>
+
+                <?php endforeach; ?>
+              </select>
               </div>
               <div class="form-group col-md-6">
-                <label for="idlugar">Id del lugar</label>
-                <input type="text" class="form-control" id="idlugar" name="idlugar">
+                <label for="idlugar">Lugar</label>
+                <select name="idlugar" id="idlugar" class="form-control form-control-lg">
+                <option value="">Selecione un lugar</option>
+                <?php
+                $lugares = file_get_contents("http://itzagenda.softmormx.com/api/api.php/lugares");
+                $lugares = json_decode($lugares, true);
+
+                foreach ($lugares as $key => $value) :
+
+
+                  ?>
+                  <option value="<?php echo $value['idlugar'] ?>"><?php echo $value['nombrelugar'] ?></option>
+
+                <?php endforeach; ?>
+              </select>
               </div>
               
 
