@@ -161,7 +161,7 @@
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="vista/js/setting-demo.js"></script>
-	<script src="vista/js/demo.js"></script>
+	
 	<script>
 		Circles.create({
 			id: 'circles-1',
