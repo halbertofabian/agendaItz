@@ -4,7 +4,7 @@ class InvitadoControlador
     public static function ctrAgregarInvitado()
     {
 
-        if (isset($_POST['btnGuardarInivitado'])) {
+        if (isset($_POST['btnGuardarInvitado'])) {
             //Lo primerito, creamos una variable iniciando curl, pasándole la url
             $ch = curl_init('http://itzagenda.softmormx.com/api/api.php/insertar/invitado');
 
